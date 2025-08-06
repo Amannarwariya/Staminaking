@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Staminaking</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Mukta:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="LIB/lib/animate/animate.min.css" />
+    <link href="LIB/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="CSS/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="CSS/css/style.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+    /* Fixed Floating Form */
+    #floatingForm {
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      width: 320px;
+      z-index: 1050;
+      background-color: rgb(0, 0, 0);
+      border: 0px solid #000000;
+      padding: 20px;
+      border-radius: 0px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Close Button */
+    #floatingForm .btn-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      
+    }
+
+    /* Bottom Fixed "Order Now" Button */
+    #orderNowBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1060;
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-weight: bold;
+      display: none;
+    }
+
+    /* Show/hide form based on screen size */
+    @media (max-width: 767.98px) {
+      #floatingForm {
+        display: none;
+      }
+      #orderNowBtn {
+        display: block;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #orderNowBtn {
+        display: block;
+      }
+    }
+
+    #countdownTimer, #countdownTimerModal {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 6px;
+      border-radius: 6px;
+      margin-top: 5px;
+      background-color: #212529;
+      color: white;
+      text-align: center;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="container-fluid bg-primary stick-ele">
+        <div class="col-md-12">
+            <center>
+                <h1 class="text-white mb-0">Call: 9301701840 </h1>
+            </center>
+        </div>
+    </div>
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid header-top">
+        <div class="nav-shaps-2"></div>
+        <div class="container d-flex align-items-center">
+            <div class="d-flex align-items-center h-100">
+                <a href="#" class="navbar-brand" style="height: 125px">
+                    <h1 class="text-primary logoname bg-success-subtle text-primary fw-semibold">
+                        Staminaking
+                    </h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+            </div>
+            <div class="w-100 h-100">
+                <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px">
+                    <div class="row gx-0 align-items-center">
+                        <div class="col-lg-8 text-center text-lg-center mb-lg-0">
+                            <div class="d-flex flex-wrap">
+                                <div class="pe-4">
+                                </div>
+                                <div class="pe-0">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nav-bar px-0 py-lg-0" style="height: 80px">
+                    <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
+                        <a href="#" class="navbar-brand-2">
+                            <h1 class="text-primary mb-0">
+                                Staminaking
+                            </h1>
+                            <!-- <img src="img/logo.png" alt="Logo"> -->
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div class="navbar-nav mx-0 mx-lg-auto">
+                                <a href="#" class="nav-item nav-link active">Home</a>
+                                <a href="#about" class="nav-item nav-link">About</a>
+                                <a href="#Ingredients" class="nav-item nav-link">Ingredients</a>
+                                <a href="#Testimonials" class="nav-item nav-link">Testimonials</a>
+                                <a href="#Certifications" class="nav-item nav-link">Certifications</a>
+
+                                <a href="#Contact" class="nav-item nav-link">Contact</a>
+                                <div class="nav-btn ps-3">
+                                    <span class="btn-search btn btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0">
+                                    </span>
+                                </div>
+                                <div class="nav-shaps-1"></div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+
+<!-- ✅ Fixed Floating Form -->
+<div id="floatingForm">
+  <button type="button" class="btn-close" aria-label="Close" id="closeFloatingFormBtn"></button>
+  <!-- <div class="text-center mb-3" style="color:#d10000; font-weight:bold; font-size:20px;">🎉 50% की छूट</div> -->
+  <form id="mainForm">
+    <div class="text-center mb-3" style="color:#d10000; font-weight:bold; font-size:20px;">🎉 50% की छूट</div>
+    <div class="mb-3">
+      <label for="nameInput" class="form-label">Name</label>
+      <input type="text" id="nameInput" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label for="mobileInput" class="form-label">Mobile Number</label>
+      <input type="tel" id="mobileInput" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Order Now</button>
+  </form>
+  <div class="text-center mt-3">
+    <div style="font-size:16px;">⏳ <strong>Limited Time Offer</strong></div>
+    <div id="countdownTimer">Loading...</div>
+  </div>
+</div>
+
+<!-- ✅ Order Now Button (Bottom Center) -->
+<button id="orderNowBtn" class="btn btn-danger orderbtn">Order Now</button>
+
+<!-- ✅ Bootstrap Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark p-3">
+      <div class="modal-header border-0 pb-0">
+        <!-- <h5 class="modal-title text-danger fw-bold" id="orderModalLabel">🎉 50% की छूट</h5> -->
+        <button type="button" class="btn-close" data-bs-dismiss="modal" style="color: white;" aria-label="Close"></button>
+      </div>
+      <div id="modalFormContainer"></div>
+      <div class="text-center mt-3">
+        <div style="font-size:16px;">⏳ <strong>Limited Time Offer</strong></div>
+        <div id="countdownTimerModal">Loading...</div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+
+
+
+
+
+    <!-- Carousel Start -->
+    <div class="header-carousel owl-carousel overflow-hidden bg-dark">
+        <!-- Slide 1 -->
+        <div class="header-carousel-item hero-section">
+            <div class="hero-bg-half-1"></div>
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7 animated fadeInLeft">
+                            <div class="text-sm-center text-md-start">
+                                <h1 class="display-1 text-white mb-4">
+                                    सहनशक्ति और अंतरंगता बढ़ाएँ - सब कुछ एक प्राकृतिक फार्मूले में।
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="header-carousel-item hero-section">
+            <div class="hero-bg-half-2"></div>
+            <div class="carousel-caption">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-7 animated fadeInLeft">
+                            <div class="text-sm-center text-md-start">
+                                <h1 class="display-2 text-white mb-4">
+                                    जल्दी खत्म करने को अलविदा कहें - स्वाभाविक रूप से अपनी टाइमिंग बढ़ाएँ
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+
+
+
+
+
+    <!-- About Start -->
+    <div id="about" class="container-fluid about pt-5 position-relative" style="z-index: 1;">
+
+        <!-- Top Centered Heading (Above All) -->
+        <div class="position-relative z-3">
+            <h1 class="display-5 text-warning fw-bold text-center mb-5" style="color: #ffeb00;">
+                जाने सेक्स टाइमिंग और लिंग साइज बढ़ाने की No. 1 औषधि
+            </h1>
+        </div>
+
+        <div class="container pt-3">
+            <div class="row g-5">
+                <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                    <div class="about-content h-100">
+                        <h1 class="display-4 text-white mb-4">Hammer of Thor क्यों चुनें ?</h1>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>यौन समय में 45 मिनट तक महत्वपूर्ण वृद्धि</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>लिंग की लंबाई में 30%+ बृद्धि</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>लिंग की मोटाई में 20%+ बृद्धि</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>लिंग का तुरंत खड़ा होना</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>अत्यंत कठोर खड़ापन</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>पाए लंबे समय तक खड़ापन</li>
+                        </h4>
+                        <h4 class="mb-4 text-white" style="font-size: xx-large;">
+                            <li>अपने साथी को अंतिम संतुष्टि प्रदान करें</li>
+                        </h4>
+
+                        <br>
+                        <h1 class="text-white mt-4">100% SATISFACTION </h1>
+                        <br>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-sm-6 mt-5">
+                                <button id="orderNowBtn" class="btn btn-danger">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image Section -->
+                <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="h-80 position-relative">
+                        <div class="about-img d-flex h-100 position-relative">
+                            <img src="IMAGE/img/Hammer of thor.png" class="img-fluid w-70" style="object-fit: cover;"
+                                alt="" />
+                        </div>
+                        <h1 class="text-white oil position-absolute bottom-0 start-50 translate-middle-x mb-4"
+                            style="z-index: 10;">तेल + केप्सूल</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+
+
+
+
+
+    <!-- Ingredients Start -->
+    <div class="container-fluid feature py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                <h4 class="display-1 text-primary">Ingredients</h4>
+                <h1 class="display-4"> विशुद्ध रूप से हर्बल, वैज्ञानिक रूप से समर्थित</h1>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-xl-4">
+                    <div class="row gy-4 gx-0">
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/Tribulus.png" alt="">
+                                </div>
+                                <div class="ms-4">
+                                    <h5 class="mb-3">त्रिबुलस टेरेस्ट्रिस</h5>
+                                    <p class="mb-0">त्रिबुलस टेरेस्ट्रिस एक आयुर्वेदिक औषधि है जो शारीरिक ताकत, यौन
+                                        स्वास्थ्य, हृदय स्वास्थ्य और वजन घटाने में सहायक है।</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/ashwagandha1.png" alt="">
+                                </div>
+                                <div class="ms-4">
+                                    <h5 class="mb-3">अश्वगंधा</h5>
+                                    <p class="mb-0">अश्वगंधा तनाव कम करने, ऊर्जा बढ़ाने, मांसपेशियों को मजबूत करने और
+                                        हार्मोनल संतुलन में सहायक है।</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/d-removebg-preview (1).png" alt="">
+                                </div>
+                                <div class="ms-4">
+                                    <h5 class="mb-3">विटामिन डी</h5>
+                                    <p class="mb-0">विटामिन डी हड्डियों और दांतों को मजबूत बनाने, इम्यून सिस्टम को सशक्त
+                                        करने और मानसिक स्वास्थ्य को सुधारने में मदद करता है। यह सूर्य की रोशनी और आहार
+                                        से प्राप्त होता है।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <img src="IMAGE/img/Hammer of thor.png" class="img-fluid w-100" style="object-fit: cover;"
+                        alt="Img">
+                </div>
+                <div class="col-xl-4">
+                    <div class="row gy-4 gx-0">
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="feature-item justify-content-end">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/maca1-removebg-preview (1).png" alt="">
+                                </div>
+                                <div class="text-end me-4">
+                                    <h5 class="mb-3">माका</h5>
+                                    <p class="mb-0">माका शरीर की ऊर्जा, सहनशक्ति, हार्मोनल संतुलन और मानसिक स्थिति को
+                                        सुधारने में मदद करता है। यह प्रजनन स्वास्थ्य को बढ़ावा देने के लिए भी उपयोगी है।
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="feature-item justify-content-end">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/zinc-removebg-preview (1).png" alt="">
+                                </div>
+                                <div class="text-end me-4">
+                                    <h5 class="mb-3">जिंक</h5>
+                                    <p class="mb-0">जिंक शरीर की प्रतिरक्षा, त्वचा, बाल और पाचन स्वास्थ्य को सुधारने में
+                                        सहायक है। यह हार्मोनल संतुलन बनाए रखने में मदद करता है और शरीर की कोशिकाओं के
+                                        पुनर्निर्माण में सहायक है।</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="feature-item justify-content-end">
+                                <div class="feature-icon">
+                                    <img src="IMAGE/img/Ginseng1-removebg-preview (1).png" alt="">
+                                </div>
+                                <div class="text-end me-4">
+                                    <h5 class="mb-3">जिन्सेंग</h5>
+                                    <p class="mb-0">जिन्सेंग ऊर्जा, सहनशक्ति और मानसिक स्थिति को सुधारने के लिए जाना
+                                        जाता है। यह इम्यून सिस्टम को भी मजबूत करता है और यौन स्वास्थ्य में भी सहायक है।
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ingredients End -->
+
+    <!-- Explore Fitness Start -->
+    <div class="container-fluid explore py-5 wow zoomIn" data-wow-delay="0.2s">
+        <div class="container py-5 text-center">
+            <h1 class="display-1 text-white mb-0"><span class="text-primary">0%</span>SIDEEFFECTS</h1>
+            <h1 class="display-1 text-white mb-0">SATISFY YOUR PARTNER</h1>
+            <!-- <a class="btn btn-primary py-3 px-4 px-md-5 me-2" href="https://www.youtube.com/embed/DWRcNpR6Kdc"><i class="fas fa-play-circle me-2"></i> <span>Watch Video</span></a> -->
+        </div>
+    </div>
+    <!-- Explore Fitness End -->
+
+
+
+
+    <!-- Certifications Start -->
+    <div id="Certifications" class="container-fluid team py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+                <h4 class="display-1 text-primary">Trust Certifications</h4>
+                <h1 class="display-4 mb-4">Trust Certifications – Your Safety is Our Priority</h1>
+                <p class="mb-0">
+                    At Staminaking , we believe that health begins with trust. That’s why every capsule is crafted
+                    using the highest standards of safety, purity, and effectiveness. Here's why thousands of customers
+                    rely on us with complete confidence
+                </p>
+            </div>
+            <div class="row gy-5 gy-lg-4 gx-4">
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="IMAGE/img/GMP.jpg" class="img-fluid w-100" alt="Image" />
+                        </div>
+                        <div class="team-content">
+                            <h4>GMP Certified (Good Manufacturing Practices)</h4>
+                            <p class="mb-0">Our manufacturing facility strictly follows GMP standards, ensuring that
+                                every batch of capsules is produced in a clean, hygienic, and controlled environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="IMAGE/img/ISO.png" class="img-fluid w-100" alt="Image" />
+                        </div>
+                        <div class="team-content">
+                            <h4>ISO 9001:2015 Certified</h4>
+                            <p class="mb-0">We are proud to hold ISO 9001:2015 certification, which means our
+                                processes—from sourcing to delivery—meet international quality benchmarks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="IMAGE/img/Herbal-natural.jpg" class="img-fluid w-100" alt="Image" />
+                        </div>
+                        <div class="team-content">
+                            <h4>100% Herbal & Natural</h4>
+                            <p class="mb-0">Each capsule is made from pure Ayurvedic herbs such as Ashwagandha, Safed
+                                Musli, Shilajit, and Kaunch Beej—sourced from trusted farms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <img src="IMAGE/img/Fssai.png" class="img-fluid w-100" alt="Image" />
+                        </div>
+                        <div class="team-content">
+                            <h4>FSSAI Approved</h4>
+                            <p class="mb-0">Our product complies with all safety and hygiene regulations laid out by the
+                                Food Safety and Standards Authority of India (FSSAI).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Certifications End -->
+
+
+
+
+    <!-- Testimonial Start -->
+    <div id="Testimonials" class="container-fluid testimonial bg-dark py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px">
+                <h4 class="display-1 text-primary">Customer Testimonials</h4>
+                <h1 class="display-4 text-white">ग्राहकों की प्रतिक्रिया</h1>
+            </div>
+            <div class="testimonial-carousel owl-carousel wow fadeInUp" data-wow-delay="0.2s">
+                <div class="testimonial-item mx-auto" style="max-width: 900px">
+                    <span class="fa fa-quote-left fa-3x quote-icon"></span>
+                    <div class="testimonial-img mb-4">
+                        <img src="IMAGE/img/testimonial-3.jpg" class="img-fluid" alt="Image" />
+                    </div>
+                    <p class="fs-4 text-white mb-4">
+                        मैं कई महीनों से थका-थका और ऊर्जा की कमी महसूस कर रहा था। Hammer of Thor कैप्सूल का इस्तेमाल
+                        शुरू करने के सिर्फ 10 दिनों के भीतर मेरी सहनशक्ति और आत्मविश्वास वापस आ गए।
+                        यहां तक कि मेरी पत्नी ने भी मुझसे पहले फर्क महसूस कर लिया — उससे पहले कि मैं कुछ कह पाता!
+                    </p>
+                    <div class="d-block">
+                        <h4 class="text-white">राहुल शर्मा</h4>
+                        <p class="m-0 pb-3">दिल्ली</p>
+                        <div class="d-flex">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item mx-auto" style="max-width: 900px">
+                    <span class="fa fa-quote-left fa-3x quote-icon"></span>
+                    <div class="testimonial-img mb-4">
+                        <img src="IMAGE/img/testimonial-2.jpg" class="img-fluid" alt="Image" />
+                    </div>
+                    <p class="fs-4 text-white mb-4">
+                        मैंने इससे पहले कई उत्पाद आज़माए, लेकिन ऐसा असर कभी नहीं देखा। यह हर्बल है, सुरक्षित है, और इसके
+                        परिणाम बिल्कुल प्राकृतिक महसूस होते हैं। अब मेरी ऊर्जा पूरे दिन बनी रहती है और मेरी नींद भी पहले
+                        से बेहतर हो गई है।
+                    </p>
+                    <div class="d-block">
+                        <h4 class="text-white">संजय राठी</h4>
+                        <p class="m-0 pb-3">जयपुर</p>
+                        <div class="d-flex">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item mx-auto" style="max-width: 900px">
+                    <span class="fa fa-quote-left fa-3x quote-icon"></span>
+                    <div class="testimonial-img mb-4">
+                        <img src="IMAGE/img/testimonial-1.jpg" class="img-fluid" alt="Image" />
+                    </div>
+                    <p class="fs-4 text-white mb-4">
+                        शुरुआत में मुझे संदेह था, लेकिन जैसे-जैसे मैंने इसे नियमित रूप से लिया, फर्क खुद महसूस किया।
+                        थकान कम हुई है और संबंधों में भी नयापन आया है। मेरी पत्नी भी काफी खुश है!
+                    </p>
+                    <div class="d-block">
+                        <h4 class="text-white">विवेक मेहता</h4>
+                        <p class="m-0 pb-3">मुंबई</p>
+                        <div class="d-flex">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+
+    <!-- Explore Fitness Start -->
+    <div class="container-fluid Delivery py-5 wow zoomIn" data-wow-delay="0.2s">
+        <div class="container py-5 text-center">
+            <h1 class="display-1 text-white">SECRET DELIVERY</h1>
+            <h2 class="display-2 text-primary">प्रोडक्ट की गुप्त डिलीवरी भारत भर में</h2>
+        </div>
+    </div>
+    <!-- Explore Fitness End -->
+
+
+    <!-- Footer Start -->
+    <!-- <div class="container-fluid footer wow fadeIn" data-wow-delay="0.2s" style="text-align: center;">
+        <div class="container btn">
+            <button class="btn btn-awesome">
+                Order Now
+            </button>
+        </div>
+    </div> -->
+    <!-- Footer End -->
+
+
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-primary copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0">
+                    <span class="text-body"><a href="#" class="border-bottom text-white"><i
+                                class="fas fa-copyright text-light me-2"></i>Copyright @ hammerofthor</a> </span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body">
+
+                    <a class="border-bottom text-white">All right reserved : 2022 - 2025</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- WhatsApp Floating Icon (Bottom-Right, Responsive) -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B919301701840&text&type=phone_number&app_absent=0" target="_blank"
+        class="position-fixed d-flex align-items-center justify-content-center rounded-circle shadow"
+        style="width: 55px; height: 55px; bottom: 115px; right: 37px; background-color: #25D366; color: white; z-index: 1050;">
+        <i class="fa-brands fa-whatsapp fa-lg"></i>
+    </a>
+
+
+    <!-- Back to Top -->
+    <div class="back-to-top">
+        <a href="#" class="btn"><i class="fa fa-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="LIB/lib/wow/wow.min.js"></script>
+    <script src="LIB/lib/easing/easing.min.js"></script>
+    <script src="LIB/lib/waypoints/waypoints.min.js"></script>
+    <script src="LIB/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="JS/js/main.js"></script>
+
+
+<!-- ✅ Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const floatingForm = document.getElementById('floatingForm');
+    const orderNowBtn = document.getElementById('orderNowBtn');
+    const closeFloatingFormBtn = document.getElementById('closeFloatingFormBtn');
+    const orderModal = new bootstrap.Modal(document.getElementById('orderModal'));
+    const modalFormContainer = document.getElementById('modalFormContainer');
+    const countdownTimer = document.getElementById('countdownTimer');
+    const countdownTimerModal = document.getElementById('countdownTimerModal');
+    const mainForm = document.getElementById('mainForm');
+
+    // ⏳ Countdown function
+    function startCountdown(element) {
+      const duration = 60 * 60 * 1000; // 1 hour
+      const endTime = new Date().getTime() + duration;
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        let remaining = endTime - now;
+
+        if (remaining <= 0) {
+          element.textContent = "समय समाप्त!";
+          clearInterval(timerInterval);
+          return;
+        }
+
+        const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((remaining / (1000 * 60)) % 60);
+        const seconds = Math.floor((remaining / 1000) % 60);
+
+        element.textContent = 
+          `${String(hours).padStart(2, '0')}:` +
+          `${String(minutes).padStart(2, '0')}:` +
+          `${String(seconds).padStart(2, '0')}`;
+      }
+
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    startCountdown(countdownTimer);
+    startCountdown(countdownTimerModal);
+
+    // 👉 Move form to modal
+    function moveFormToModal() {
+      modalFormContainer.appendChild(mainForm);
+    }
+
+    // 👉 Move form back to fixed position
+    function moveFormToFixed() {
+      floatingForm.insertBefore(mainForm, floatingForm.querySelector('.text-center'));
+    }
+
+    // ❌ Close fixed form manually
+    closeFloatingFormBtn.addEventListener('click', () => {
+      floatingForm.style.display = 'none';
+      orderNowBtn.style.display = 'block';
+    });
+
+    // ✅ Order Now button click (for both views)
+    orderNowBtn.addEventListener('click', () => {
+      floatingForm.style.display = 'none';
+      orderNowBtn.style.display = 'none';
+      moveFormToModal();
+      orderModal.show();
+    });
+
+    // ❌ On modal close, return form back
+    document.getElementById('orderModal').addEventListener('hidden.bs.modal', () => {
+      moveFormToFixed();
+      if (window.innerWidth >= 768) {
+        floatingForm.style.display = 'block';
+        orderNowBtn.style.display = 'none';
+      } else {
+        floatingForm.style.display = 'none';
+        orderNowBtn.style.display = 'block';
+      }
+    });
+
+    // ✅ Form submission
+    mainForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Order Submitted!');
+      orderModal.hide();
+    });
+
+    // ✅ Mobile Auto-Open Modal After 10% Scroll
+    let hasOpenedModalOnScroll = false;
+
+    window.addEventListener('scroll', () => {
+      if (window.innerWidth < 768 && !hasOpenedModalOnScroll) {
+        const scrollTop = window.scrollY;
+        const pageHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / pageHeight) * 100;
+
+        if (scrollPercent > 10) {
+          hasOpenedModalOnScroll = true;
+          floatingForm.style.display = 'none';
+          orderNowBtn.style.display = 'none';
+          moveFormToModal();
+          orderModal.show();
+        }
+      }
+    });
+  });
+</script>
+
+
+
+</body>
+
+</html>
